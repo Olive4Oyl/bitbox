@@ -5,7 +5,7 @@
 	    <h1><%= link_to "BitBox", root_path %> |  <%= link_to "Shop", boxes_path %> | <%= link_to "Login", new_user_session_path %> | Cart </h1>
 	 <% else %>
 	    <%= link_to("Sign Out", destroy_user_session_path, method: :delete) %>
-	    <h1><%= link_to "BitBox", root_path %> | <%= link_to "Shop", boxes_path %> | <%= link_to current_user.name, user_path(current_user) %> | Cart </h1>
+	    <h1><%= link_to "BitBox", root_path %> | <%= link_to "Shop", boxes_path %> | <%= link_to current_user.name, user_path(current_user)%> | Cart </h1>
 	    <br>
 	    <br>
 	 <% end %>
