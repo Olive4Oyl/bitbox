@@ -8,6 +8,10 @@ class UsersController < ApplicationController
 	end
 
 	def update
+		if user_signed_in? && current_user == @user
+			current_user.update(user_params)
+		end
+		redirect_to user_path(current_user) 
 	end
 
 	def destroy
@@ -17,6 +21,10 @@ class UsersController < ApplicationController
 
 	def set_user
 		@user = User.find_by(id: params[:id])
+	end
+
+	def user_params
+		params.require(:user).permit(:name)
 	end
 
 
