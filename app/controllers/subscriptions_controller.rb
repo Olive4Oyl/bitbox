@@ -4,11 +4,10 @@ class SubscriptionsController < ApplicationController
 
 	def new
 		@subs = Subscription.new
-		@subs.box_build()
+		@subs.build_box
 	end
 
 	def create
-
 		@subs = Subscription.new(subs_params)
 		if @subs.valid?
 	 		@subs.save
@@ -36,7 +35,7 @@ class SubscriptionsController < ApplicationController
 	private
 
 	def subs_params
-		params.require(:subscription).permit(:subscriber_id, :level)
+		params.require(:subscription).permit(:subscriber_id, :level, box_attributes: [:name])
 	end
 
 	def set_user

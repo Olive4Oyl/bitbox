@@ -25,7 +25,8 @@
 	<%= f.fields_for :box do |box| %>
 		<%= box.label :name, "Choose a Box Level" %><br><br>
 		<% @names = ["Starter Box", "Advanced Box", "Super Pro Box"] %>
-		<%= f.collection_select(:name, @names ,:to_s, :to_s) %><br><br>
+		<%= box.collection_select(:name, @names ,:to_s, :to_s) %><br><br>
+	<% end %>
 
   	<%= f.submit "Subscribe"%>
 <% end %>
