@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 20161109022141) do
 
   create_table "boxes", force: :cascade do |t|
-    t.string   "size"
+    t.string   "name"
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false

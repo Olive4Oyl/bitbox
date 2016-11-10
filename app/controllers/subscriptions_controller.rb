@@ -4,14 +4,16 @@ class SubscriptionsController < ApplicationController
 
 	def new
 		@subs = Subscription.new
+		@subs.box_build()
 	end
 
 	def create
+
 		@subs = Subscription.new(subs_params)
 		if @subs.valid?
 	 		@subs.save
-	 		@current_user.subscribed = true
-	 		redirect_to user_subscription_path(current_user, @subs), notice: 'Your Subscription Has Been Submitted.'
+	 		current_user.subscribed = true
+	 		redirect_to user_path(current_user), notice: 'Your Subscription Has Been Submitted.'
  		else
  			render :new 
  		end

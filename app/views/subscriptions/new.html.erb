@@ -19,7 +19,13 @@
 <%= form_for @subs do |f| %>
 	<%= f.hidden_field :subscriber_id, :value => current_user.id %>
 	<%= f.label :level, "Monthly Plan" %><br><br>
-	<%= f.collection_select(:level, Subscription.all.first(3), :id, :level) %><br><br>
+	<% @levels = ["$10/month", "$30/month", "$100/month"] %>
+	<%= f.collection_select(:level, @levels ,:to_s, :to_s) %><br><br>
+
+	<%= f.fields_for :box do |box| %>
+		<%= box.label :name, "Choose a Box Level" %><br><br>
+		<% @names = ["Starter Box", "Advanced Box", "Super Pro Box"] %>
+		<%= f.collection_select(:name, @names ,:to_s, :to_s) %><br><br>
 
   	<%= f.submit "Subscribe"%>
 <% end %>
