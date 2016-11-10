@@ -4,6 +4,7 @@ class CreateSubscriptions < ActiveRecord::Migration[5.0]
     	t.integer :subscriber_id 
     	t.integer :box_id
     	t.string :level
+    	t.string :description
       t.timestamps
     end
   end

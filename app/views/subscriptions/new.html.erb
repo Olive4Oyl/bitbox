@@ -1,0 +1,25 @@
+<h2> Subscribe to BitBox </h2>
+
+<% if @subs.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@subs.errors.count, "error") %>
+      prohibited this subscription from being saved:
+    </h2>
+ 
+    <ul>
+    <% @subs.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+<%= form_for @subs do |f| %>
+	<%= f.hidden_field :subscriber_id, :value => current_user.id %>
+	<%= f.label :level, "Monthly Plan" %><br><br>
+	<%= f.collection_select(:level, Subscription.all.first(3), :id, :level) %><br><br>
+
+  	<%= f.submit "Subscribe"%>
+<% end %>

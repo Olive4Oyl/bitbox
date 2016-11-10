@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 20161109022141) do
 
   create_table "boxes", force: :cascade do |t|
-    t.string   "type"
+    t.string   "size"
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20161109022141) do
     t.integer  "subscriber_id"
     t.integer  "box_id"
     t.string   "level"
+    t.string   "description"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end

@@ -1,4 +1,4 @@
 class Box < ApplicationRecord
-	has_many :subscriptons
-	has_many :users, through: :subscriptons
+	has_many :subscriptions
+	has_many :users, through: :subscriptions
 end

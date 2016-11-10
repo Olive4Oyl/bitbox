@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 	before_action :set_user
+	# before_action :set_subs
 
 	def show
 	end
@@ -27,5 +28,8 @@ class UsersController < ApplicationController
 		params.require(:user).permit(:name)
 	end
 
+	# def set_subs
+	# 	@subs = Subscription.find_by(id: params[:id])
+	# end
 
 end
