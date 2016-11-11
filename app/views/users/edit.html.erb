@@ -6,4 +6,4 @@
 	<%= f.submit 'Update' %>
 <% end %> <br>
 
-<%= link_to 'Back', user_path(current_user) %>
+<%= button_to  'Back', user_path(current_user), method: :get %>

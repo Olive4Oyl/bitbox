@@ -1,0 +1,24 @@
+<h2> Monthly Plan </h2>
+
+<strong>$10/month</strong><br>
+Have an little inventor?<br>
+Inspire their creativity with the right tools in this month's bite-size BitBox (7 BITS & 3 Accessories).<br>
+Free Shipping*<br><br>
+
+<strong>$30/month</strong><br>
+Have an little inventor?<br>
+Inspire their creativity with the right tools in this month's medium-size BitBox (8 BITS & 18 Accessories).<br>
+Free Shipping*<br><br>
+
+<strong>$100/month</strong><br>
+Have an little inventor?<br>
+Inspire their creativity with the right tools in this month's large-size BitBox (304 BITS & 228 Accessories).<br>
+Free Shipping*<br><br>
+
+<%= button_to "Subscribe", new_user_subscription_path(current_user), method: :get%> <br>
+<%= button_to "No Thanks", user_path(current_user), method: :get %>
+
+<br>
+
+<h2> Box Level </h2>
+<%= render 'info' %>

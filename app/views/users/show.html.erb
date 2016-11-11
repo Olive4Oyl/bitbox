@@ -1,11 +1,11 @@
-<h2><%= current_user.name %></h2>
+<h2><%= current_user.name%>'s Subscription</h2>
 
 <br>
 
-<h2> <%= link_to "Edit Your Profile", edit_user_path(current_user) %></h2>
+<%= link_to "Edit Your Profile", edit_user_path(current_user) %><br>
 
-<h2> Current Subscription </h2>
-<% binding.pry %>
-<% current_user.subscriptions.each do |sub| %>
-	<%= sub.level %>
-<% end %>
+<h2>Current Plan</h2>
+<%= render 'current' %>
+
+
+

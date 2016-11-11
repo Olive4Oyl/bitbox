@@ -1,2 +1,7 @@
-<h2> Order History </h2>
+<h2> Active Subscription </h2>
+<h3> <%= current_user.name %></h3>
+
+<%= render 'users/current' %><br>
+<%= link_to 'Edit', edit_user_subscription_path(current_user, @subs)%>
+<%= link_to 'Cancel', user_subscription_path(current_user, @subs), method: :delete %>
 
