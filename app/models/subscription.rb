@@ -3,11 +3,8 @@ class Subscription < ApplicationRecord
 	belongs_to :subscriber, :class_name => "User"
 	accepts_nested_attributes_for :box
 
-	#hard code in the nested attributes when I get the service !!!
-	# def box_attributes= (attributes)
-	# 	attributes.value.each do |att|
-
-	# 	end
+	# def box_attributes=(box)
+	# 	self.box = Box.find_or_create_by(name: box.name)
+	# 	self.box.update(box)
 	# end
-
 end
