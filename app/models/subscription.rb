@@ -1,6 +1,6 @@
 class Subscription < ApplicationRecord
-	belongs_to :box
-	belongs_to :subscriber, :class_name => "User"
+	belongs_to :box, optional: true
+	belongs_to :subscriber, :class_name => "User", optional: true
 	accepts_nested_attributes_for :box
 
 	# def box_attributes=(box)

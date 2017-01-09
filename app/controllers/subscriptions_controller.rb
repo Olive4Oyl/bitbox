@@ -3,6 +3,11 @@ class SubscriptionsController < ApplicationController
 	before_action :set_user
 
 	def index
+		@subs = Subscription.all
+		respond_to do |format|
+			format.html { render :index }
+			format.json { render json: @subs } 
+		end
 	end
 	
 	def new
@@ -11,28 +16,32 @@ class SubscriptionsController < ApplicationController
 	end
 
 	def create
-		@subs = Subscription.new(subs_params)
-		if @subs.valid?
-	 		@subs.save
-	 		current_user.subscribed = true
-	 		redirect_to user_path(current_user), notice: 'You Are Now Subscribed.'
- 		else
- 			render :new 
- 		end
+		# @subs = Subscription.new(subs_params)
+		# if @subs.valid?
+	 # 		@subs.save
+	 # 		current_user.subscribed = true
+	 # 		redirect_to user_path(current_user), notice: 'You Are Now Subscribed.'
+ 	# 	else
+ 	# 		render :new 
+ 	# 	end
 	end
 
 	def show
+		respond_to do |format|
+			format.html { render :index }
+			format.json { render json: @subs }
+		end 
 	end
 
 	def edit
 	end
 
 	def update
-		if @subs.update(subs_params)
-			redirect_to user_subscription_path(current_user, @subs), notice: 'Your Subscription is Updated.'
-		else
-			render :edit
-		end
+		# if @subs.update(subs_params)
+		# 	redirect_to user_subscription_path(current_user, @subs), notice: 'Your Subscription is Updated.'
+		# else
+		# 	render :edit
+		# end
 	end
 
 	def destroy
@@ -44,7 +53,7 @@ class SubscriptionsController < ApplicationController
 	private
 
 	def subs_params
-		params.require(:subscription).permit(:subscriber_id, :level, box_attributes: [:name])
+		params.require(:subscription).permit(:subscriber_id, :level, box_attributes: [:title])
 	end
 
 	def set_user

@@ -15,6 +15,9 @@ ActiveRecord::Schema.define(version: 20170106215046) do
   create_table "boxes", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
+    t.string   "sub_box_level"
+    t.string   "sub_box_info"
+    t.string   "sub_box_guide"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.integer  "price"

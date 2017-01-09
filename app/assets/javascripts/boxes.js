@@ -1,8 +1,7 @@
 $(document).on('turbolinks:load', function() {
 	getBoxes();
- //    if($('.boxes.index').length) {
-	// 	getBoxes();
-	// }
+  getSubscriptions();
+  attachListener();
 });
 
 function getBoxes() {
@@ -25,8 +24,6 @@ function Box(attr) {
   this.id = attr.id;
   this.title = attr.title;
   this.image = attr.image;
-  // this.price = attr.price;
-  // var price_attr = attr.price
   this.price = price(attr.price);
   this.age_recommendation = attr.age_recommendation;
 
