@@ -15,19 +15,34 @@
   </div>
 <% end %>
 
-
 <%= form_for @subs do |f| %>
 	<%= f.hidden_field :subscriber_id, :value => current_user.id %>
 	<%= f.label :level, "Monthly Plan" %><br><br>
-	<% @levels = ["$10/month", "$30/month", "$100/month"] %>
-	<%= f.collection_select(:level, @levels ,:to_s, :to_s) %><br><br>
-
-	<%= f.fields_for :box do |box| %>
-		<%= box.label :name, "Choose a Box Level" %><br><br>
-		<% @names = ["Starter Box", "Advanced Box", "Super Pro Box"] %>
-		<%= box.collection_select(:name, @names ,:to_s, :to_s) %><br><br>
-	<% end %>
-
-  	<%= f.submit "Subscribe"%>
-  	
+	<%= f.collection_select(:level, Subscription.first(3), :level_with_descript, :level) %><br>
+  <br> <%= f.submit "Subscribe" %>
 <% end %>
+
+<script type="text/javascript" charset="utf-8">
+
+ $(function () {
+   $('form').submit(function(event) {
+
+     //prevent form from submitting the default way
+     event.preventDefault();
+
+     var values = $(this).serialize();
+
+     var posting = $.post("/subscriptions", values);
+
+     posting.done(function(data) {
+      var post = data;
+      var string = "<h3> BitBox: </h3></br>" + "<strong>Monthly Plan</strong><br>" + "<br>" + post.level + "</br>"
+      $('.monthly-plan').html(string)
+
+     });
+   });
+ });
+
+</script>
+
+

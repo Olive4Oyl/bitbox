@@ -3,10 +3,8 @@
 		<% if !sub.subscriber_id = nil %>
 			<h3> BitBox: </h3>
 			<%= sub.level %><br>
-			<%= sub.box.name %><br>
 			<% @date = sub.updated_at %>
-			Started on: <%= @date.strftime("%m/%d/%Y") %><br><br>
-			<%= link_to 'View Your Subscription', user_subscription_path(current_user, sub) %>
+			<br>Started on: <%= @date.strftime("%m/%d/%Y") %><br><br>
 		<% end %>
 	<% end %><br>
 <% else %>

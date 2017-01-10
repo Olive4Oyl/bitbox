@@ -1,11 +1,13 @@
-<h2><%= current_user.name%>'s Subscription</h2>
+<div class="user-container">
 
 <br>
 
-<%= link_to "Edit Your Profile", edit_user_path(current_user) %><br>
+<%= link_to "Edit Your Profile", edit_user_path(current_user) %><br><br>
 
-<h2>Current Plan</h2>
-<%= render 'current' %>
+<h2> Subscribe to Plan </h2>
+<%= button_to "Subscribe", new_subscription_path, method: :get %>
 
+<br><h2>Current Plan</h2>
+<%= render "current" %>
 
 

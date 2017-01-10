@@ -7,4 +7,8 @@ class Subscription < ApplicationRecord
 	# 	self.box = Box.find_or_create_by(name: box.name)
 	# 	self.box.update(box)
 	# end
+
+	def level_with_descript
+		"#{level}, #{description}"
+	end
 end

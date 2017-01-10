@@ -3,6 +3,10 @@ class UsersController < ApplicationController
 	before_action :set_subs
 
 	def show
+    	respond_to do |f|
+	      f.html { render :show }
+	      f.json { render json: @user }
+    	end
 	end
 
 	def edit 
@@ -19,6 +23,7 @@ class UsersController < ApplicationController
 	end
 
 	private
+
 
 	def set_user
 		@user = User.find_by(id: params[:id])

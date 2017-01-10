@@ -16,14 +16,15 @@ class SubscriptionsController < ApplicationController
 	end
 
 	def create
-		# @subs = Subscription.new(subs_params)
-		# if @subs.valid?
-	 # 		@subs.save
-	 # 		current_user.subscribed = true
-	 # 		redirect_to user_path(current_user), notice: 'You Are Now Subscribed.'
- 	# 	else
- 	# 		render :new 
- 	# 	end
+		binding.pry
+		@subscription =  Subscription.new(subs_params)
+		if @subscription.valid?
+	 		@subscription.save
+	 		current_user.subscribed = true
+			render json: @subscription 
+ 		else
+ 			render :new 
+ 		end
 	end
 
 	def show
@@ -37,11 +38,11 @@ class SubscriptionsController < ApplicationController
 	end
 
 	def update
-		# if @subs.update(subs_params)
-		# 	redirect_to user_subscription_path(current_user, @subs), notice: 'Your Subscription is Updated.'
-		# else
-		# 	render :edit
-		# end
+		if @subs.update(subs_params)
+			redirect_to user_subscription_path(current_user, @subs), notice: 'Your Subscription is Updated.'
+		else
+			render :edit
+		end
 	end
 
 	def destroy
@@ -52,8 +53,9 @@ class SubscriptionsController < ApplicationController
 
 	private
 
+
 	def subs_params
-		params.require(:subscription).permit(:subscriber_id, :level, box_attributes: [:title])
+		params.require(:subscription).permit(:subscriber_id, :level, :description, box_attributes: [:title])
 	end
 
 	def set_user

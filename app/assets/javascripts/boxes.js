@@ -1,7 +1,8 @@
-$(document).on('turbolinks:load', function() {
+$(function() {
 	getBoxes();
   getSubscriptions();
-  attachListener();
+  attachBoxes();
+  getUsers();
 });
 
 function getBoxes() {
@@ -26,7 +27,9 @@ function Box(attr) {
   this.image = attr.image;
   this.price = price(attr.price);
   this.age_recommendation = attr.age_recommendation;
-
+  this.box_level = attr.sub_box_level
+  this.box_info = attr.sub_box_info
+  this.box_guide = attr.sub_box_guide
 }
 
 function price(price_attr){
@@ -43,6 +46,26 @@ Box.prototype.toHTML = function(){
    "$" + this.price + '</br>',
     this.description + '</br>',
    	"For ages " + this.age_recommendation + "+" + '</br>',
+  ].join("")
+}
+
+
+Box.prototype.toSubHTML = function(){
+  return [
+   '<br><h3><strong>',
+    this.box_level, 
+    '</strong></h3>',
+   '<strong>',
+    this.title,
+   '</strong></br>',
+    this.description + '</br>',
+    "<br> What You'll Get </br>",
+    '<br>' + this.box_info + '</br>',
+    '(+ Thousands More Online & On the App!)' +'</br>',
+    '<br>' + this.box_guide + '</br>',
+    'Step-by-step instructions that guide you from simple circuit building to mind-blowing inventions. </br>',
+    '<br> For ages ' + this.age_recommendation + "+" + '</br>',
+    '<br><br>*All plans will automatically renew but may be canceled at anytime. Applicable taxes not included.'
   ].join("")
 }
 

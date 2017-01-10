@@ -31,7 +31,7 @@ Subscription.prototype.toHTML = function(){
 	].join("")
 }
 
-function attachListener(){
+function attachBoxes(){
 	$('.table').on("click", function(ev){
 		ev.preventDefault();
 		var id = parseInt(this.id) + 1
@@ -41,42 +41,11 @@ function attachListener(){
 			dataType: "json",
 		}).done(function(response){
 			var box = new Box(response.box)
-			var html = box.toHTML()
+			var html = box.toSubHTML()
+			$('.box-info').empty();
 			$('.box-info').append(html)
 		})
 	})
-}
-
-function Box(attr) {
-  this.description = attr.description;
-  this.id = attr.id;
-  this.title = attr.title;
-  this.image = attr.image;
-  this.age_recommendation = attr.age_recommendation;
-  this.box_level = attr.sub_box_level
-  this.box_info = attr.sub_box_info
-  this.box_guide = attr.sub_box_guide
-}
-
-
-
-Box.prototype.toHTML = function(){
-  return [
-   '<br><h3><strong>',
-   	this.box_level, 
-   	'</strong></h3>',
-   '<strong>',
-   // '<img src="' + this.image + '" /></br>',
-    this.title,
-   '</strong></br>',
-    this.description + '</br>',
-   	"<br> What You'll Get </br>",
-   	'<br>' + this.box_info + '</br>',
-   	'(+ Thousands More Online & On the App!)' +'</br>',
-   	'<br>' + this.box_guide + '</br>',
-   	'Step-by-step instructions that guide you from simple circuit building to mind-blowing inventions. </br>',
-   	'<br> For ages ' + this.age_recommendation + "+" + '</br>',
-  ].join("")
 }
 
 
