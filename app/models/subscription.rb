@@ -3,6 +3,8 @@ class Subscription < ApplicationRecord
 	belongs_to :subscriber, :class_name => "User", optional: true
 	accepts_nested_attributes_for :box
 
+	validates :level, presence: true
+
 	# def box_attributes=(box)
 	# 	self.box = Box.find_or_create_by(name: box.name)
 	# 	self.box.update(box)

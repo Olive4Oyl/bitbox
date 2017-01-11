@@ -4,9 +4,9 @@
 
 	<table border="1" cellpadding="50" class="subs">
 		<tr>
-			<td class="table" id="0"></td>
-			<td class="table" id="1"></td>
-			<td class="table" id="2"></td>
+			<% @subs.first(3).each do |sub| %>
+				<td class="table" id=<%= sub.id %>></td>
+			<% end %>
 		</tr>
 	</table>
 

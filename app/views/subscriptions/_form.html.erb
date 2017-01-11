@@ -15,34 +15,11 @@
   </div>
 <% end %>
 
-<%= form_for @subs do |f| %>
+<%= form_for @subs, :html => {:class => 'subscription'} do |f| %>
 	<%= f.hidden_field :subscriber_id, :value => current_user.id %>
 	<%= f.label :level, "Monthly Plan" %><br><br>
 	<%= f.collection_select(:level, Subscription.first(3), :level_with_descript, :level) %><br>
   <br> <%= f.submit "Subscribe" %>
 <% end %>
-
-<script type="text/javascript" charset="utf-8">
-
- $(function () {
-   $('form').submit(function(event) {
-
-     //prevent form from submitting the default way
-     event.preventDefault();
-
-     var values = $(this).serialize();
-
-     var posting = $.post("/subscriptions", values);
-
-     posting.done(function(data) {
-      var post = data;
-      var string = "<h3> BitBox: </h3></br>" + "<strong>Monthly Plan</strong><br>" + "<br>" + post.level + "</br>"
-      $('.monthly-plan').html(string)
-
-     });
-   });
- });
-
-</script>
 
 

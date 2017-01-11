@@ -1,22 +1,35 @@
 $(function() {
-	getBoxes();
+  getBoxes();
   getSubscriptions();
   attachBoxes();
   getUsers();
+  attachformListener();
 });
 
+// .done(function(response) {
+//       console.log("hello")
+//       response.forEach(function(box_attr) {
+//         var box = new Box(box_attr)
+//         var html = box.toHTML()
+//         $('.boxes-container').append(html);
+//       })
+//     })
+
 function getBoxes() {
-	$.ajax({
-		url: "/boxes",
-		method: "GET",
-		dataType: "json",
-	}).done(function(response) {
-		response.forEach(function(box_attr) {
-		  var box = new Box(box_attr)
-		  var html = box.toHTML()
-		  $('.boxes-container').append(html);
-		})
-	})
+  if ($('.boxes.index').length){
+
+  	$.ajax({
+  		url: "/boxes",
+  		method: "GET",
+  		dataType: "json",
+  	}).done(function(response) {
+      response.forEach(function(box_attr) {
+        var box = new Box(box_attr)
+        var html = box.toHTML()
+        $('.boxes-container').append(html);
+      })
+    })
+  }
 }
 
 

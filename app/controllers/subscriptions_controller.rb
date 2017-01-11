@@ -16,8 +16,8 @@ class SubscriptionsController < ApplicationController
 	end
 
 	def create
-		binding.pry
 		@subscription =  Subscription.new(subs_params)
+		
 		if @subscription.valid?
 	 		@subscription.save
 	 		current_user.subscribed = true
