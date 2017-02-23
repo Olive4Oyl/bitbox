@@ -65,4 +65,5 @@ class SubscriptionsController < ApplicationController
 	def set_subs
 		@subs = Subscription.find_by(id: params[:id])
 	end
+	
 end

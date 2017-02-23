@@ -32,7 +32,6 @@ function getBoxes() {
   }
 }
 
-
 function Box(attr) {
   this.description = attr.description;
   this.id = attr.id;
@@ -48,7 +47,6 @@ function Box(attr) {
 function price(price_attr){
 	return Math.round(price_attr*10)/1000.0
 }
-
 
 Box.prototype.toHTML = function(){
   return [
