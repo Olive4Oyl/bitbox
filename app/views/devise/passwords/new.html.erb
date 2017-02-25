@@ -1,0 +1,45 @@
+<!-- <h2>Forgot your password?</h2>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Send me reset password instructions" %>
+  </div>
+<% end %> -->
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4" id="borderless">
+        <div class="panel panel-default" id="borderless">
+          <div class="panel-heading" id="borderless">
+           <h3>Forgot your password?</h3>
+            <!-- <h3 class="panel-title">Forgot your password?</h3> -->
+           </div>
+          <div class="panel-body" id="borderless">
+            <form accept-charset="UTF-8" role="form">
+              <fieldset>
+            	<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  					<%= devise_error_messages! %>
+  				<p> Please enter your email below </p>
+  				<div class="field">
+    				<%= f.label :email %><br />
+    				<%= f.email_field :email, autofocus: true %>
+  				</div><br>
+
+  				<!-- <div class="actions">
+    				<%= f.submit "RESET MY PASSWORD" %>
+  				</div> -->
+              <% end %>
+              <input class="btn btn-lg btn-success btn-block" type="submit" value="RESET MY PASSWORD"><br>
+            	</fieldset>
+            </form>
+        	</div>
+      </div>
+    </div>
+  </div>
