@@ -1,18 +1,19 @@
 <% if !user_signed_in? %>
     <div class="container">
- <!--      <div class="row" id="nav-bar">
-        <div class="col-md-4"><%= link_to "BitBox", root_path, :class => 'logo' %></div>
-        <div class="col-md-4" id="logo-border"><%= link_to new_user_session_path, :class => 'logo-2' do %>
-            <i class="glyphicon glyphicon-user"></i> 
+      <div class="row" id="nav-bar">
+        <div class="col-md-4" id="logo-column1"><%= link_to "BitBox", root_path, :class => 'logo' %></div>
+        <div class="col-md-4" id="logo-column2"><%= link_to "Shop", boxes_path, :class => 'logo-2'%></div>
+        <div class="col-md-4" id="logo-column3">
+          <%= link_to new_user_session_path, :class => 'logo-3' do %>
+            <i class="fa fa-user"></i> 
           <%end%>
-        </div>
-        <div class="col-md-4"><%= link_to boxes_path, :class => 'logo-3' do %>
-            <i class="glyphicon glyphicon-shopping-cart"></i> 
+          <%= link_to boxes_path, :class => 'logo-3' do %>
+            <i class="fa fa-shopping-cart"></i> 
           <% end %>
         </div>
       </div>
-    </div>  -->
-
+    </div> 
+<!-- 
     <div class="row" id="nav-bar">
       <div class="col-xs-12 col-sm-6 col-md-8">
         <%= link_to "BitBox", root_path, :class => 'logo' %>
@@ -25,12 +26,26 @@
           <i class="fa fa-shopping-cart"></i> 
         <% end %> 
       </div>
-    </div> 
+    </div>  -->
 
 	 <% else %>
-	   <center><h1><%= link_to "BitBox", root_path %> | <%= link_to "Shop", boxes_path %> | <%= link_to current_user.name, user_path(current_user), :class => "user"%> | <%= link_to "Get Started", subscriptions_path %> | <%= link_to "Sign Out", destroy_user_session_path, method: :delete %> </h1></center>
+   <div class="container">
+      <div class="row" id="nav-bar">
+        <div class="col-md-4" id="logo-column1"><%= link_to "BitBox", root_path, :class => 'logo' %></div>
+        <div class="col-md-4" id="logo-column2"><%= link_to "Shop", boxes_path, :class => 'logo-2'%> |  <%= link_to current_user.name, user_path(current_user), :class => "user"%> | <%= link_to "Get Started", subscriptions_path, :class => "logo-5" %>  </div>
+        <div class="col-md-4" id="logo-column3">
+          <%= link_to new_user_session_path, :class => 'logo-3' do %>
+            <i class="fa fa-user"></i> 
+          <%end%>
+          <%= link_to destroy_user_session_path, :class => 'logo-4', method: :delete do %>
+            <i class="fa fa-sign-out"></i>
+          <% end %>
+        </div>
+      </div>
+    </div> 
+<!-- 	   <center><h1><%= link_to "BitBox", root_path %> | <%= link_to "Shop", boxes_path %> | <%= link_to current_user.name, user_path(current_user), :class => "user"%> | <%= link_to "Get Started", subscriptions_path %> | <%= link_to "Sign Out", destroy_user_session_path, method: :delete %> </h1></center>
 	    <br>
-	    <br>
+	    <br> -->
 <% end %>
 
 
