@@ -2,3 +2,171 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import url('https://fonts.googleapis.com/css?family=Puritan');
+
+
+/* Navigation Bar */
+
+#nav-bar {
+	padding: 10px, 40px, 40px, 10px;
+    border-bottom-width: 20px;
+    margin: 20px;   
+    border-bottom: solid 1px #ededed;
+}
+
+.logo {
+	color: #5f027e;
+	font-size: 35px;
+}
+
+.logo-2, .user, .logo-5 {
+	text-transform: uppercase;
+	color: #444;
+	font-size: 15px;
+    padding-top: 10px;
+    font-family: 'Puritan', sans-serif;
+}
+
+.logo-2, .user, .logo-5 {
+	padding-right: 10px;
+}
+
+.logo-2, .logo-3, .logo-4, .logo-5, .user  {
+	color: #5f027e;
+	font-size: 15px;
+    padding-top: 10px;
+}
+
+.logo:link, .logo-2:link, .logo-3:link, .logo-4:link, .user:link, .logo-5:link {
+	color: #5f027e;
+	text-decoration: none;
+}
+
+.logo:hover, .logo-2:hover, .logo-3:hover, .logo-4:hover, .user:hover, .logo-5:hover {
+	color: #5f027e;
+}
+
+.logo-2:hover, .user:hover, .logo-5:hover {
+	border-bottom: 3px solid #5f027e;
+}
+
+#logo-column1 {
+	padding-left: 90px;
+	padding-bottom: 10px;
+}
+
+#logo-column2 {
+	padding-left: 60px;
+	padding-top: 20px;
+}
+
+#logo-column3 {
+	padding-left: 130px;
+	padding-top: 20px;
+}
+
+
+ /*.col-xs-12.col-sm-6.col-md-8 {
+	padding-bottom: 10px;
+}
+
+.col-xs-6.col-md-4 {
+    padding-left: 95px;
+    padding-top: 20px;
+} */
+
+
+.fa.fa-user, .fa.fa-shopping-cart, .fa.fa-sign-out {
+	 font-size: 23px;
+}
+
+.fa.fa-shopping-cart {
+	padding-left: 50px;
+}
+
+.fa.fa-sign-out {
+	padding-left: 50px;
+}
+
+/* Sign in/ Log in pages */
+
+h3 {
+	text-align: center;
+}
+
+p {
+	text-align: center;
+}
+
+.col-md-4.col-md-offset-4 {
+	margin-top: 40px;
+}
+
+.panel-title {
+	text-align: center;
+	padding: 5px;
+}
+
+.panel-default > .panel-heading{
+	background-color: transparent;
+}
+
+.panel-heading {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+a.signin {
+	left: 30px;
+	color:  #5f027e;
+}
+
+a:hover {
+	color:  #5f027e;
+}
+
+.btn-success {
+	background-color: #5f027e;
+	border-color: #5f027e;
+	text-transform: uppercase;
+	border-radius: 2px;
+	text-align: center;
+}
+
+.btn-success:hover {
+	background-color: #430059;
+	border-color: #430059;
+	color: white;
+}
+
+.btn.btn-lg.btn-facebook.btn-block{
+	background-color: #23527c;
+	border-color: #23527c;
+	color: white;
+}
+
+.btn.btn-lg.btn-facebook.btn-block:hover {
+	background-color: #1e486d;
+	border-color: #1e486d;
+	color: white;
+}
+
+#user_email, #user_password, #user_password_confirmation{
+	width: 250px;
+    height: 36px;
+    padding: 5px;
+}
+
+input[type=email]:focus, input[type=password]:focus {
+    border: 3px solid #555;
+}
+
+
+/* Forget Password */
+
+#borderless {
+	border: transparent;
+}
