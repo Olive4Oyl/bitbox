@@ -1,9 +1,29 @@
-<h2>Edit Your Profile </h2>
+<div class="user-container">
 
-<%= form_for current_user do |f| %>
-	<%= f.label :name %><br><br>
-	<%= f.text_field :name %><br><br>
-	<%= f.submit 'Update' %>
-<% end %> <br>
+	<div class="col-lg-6 col-sm-6">
+	    <div class="card hovercard">
+	        <div class="card-background">
+	            <img class="card-bkimg" alt="" src="https://pic.chinesefontdesign.com/uploads/2014/08/2b81522a7845748a5c36e5ae3bd28d4b.gif">
+	        </div>
+	        <div class="useravatar">
+	            <img alt="" src="https://pic.chinesefontdesign.com/uploads/2014/08/2b81522a7845748a5c36e5ae3bd28d4b.gif">
+	        </div>
+	        <div class="card-info"> 
+	        	<h2>Edit Your Profile </h2>
+	        </div>
+	    </div>
 
-<%= button_to  'Back', user_path(current_user), method: :get %>
+	    <div class="card hovercard" id="profile-buttons">
+	   		<div class="row" >
+	   		<%= form_for current_user do |f| %>
+				<%= f.label :name, :class => "profile-name" %>:
+				<%= f.text_field :name %><br><br>
+				<%= f.submit 'Update', :class => 'btn btn-secondary btn-sm active' %>
+			<% end %> <br>
+			<%= button_to  'Back', user_path(current_user), method: :get, :class => 'btn btn-secondary btn-sm active' %>
+	    	</div>
+		</div>
+
+    </div>
+    
+</div>

@@ -1,13 +1,36 @@
 <div class="user-container">
 
-<br>
+	<div class="col-lg-6 col-sm-6">
+	    <div class="card hovercard">
+	        <div class="card-background">
+	            <img class="card-bkimg" alt="" src="https://pic.chinesefontdesign.com/uploads/2014/08/2b81522a7845748a5c36e5ae3bd28d4b.gif">
+	        </div>
+	        <div class="useravatar">
+	            <img alt="" src="https://pic.chinesefontdesign.com/uploads/2014/08/2b81522a7845748a5c36e5ae3bd28d4b.gif">
+	        </div>
+	        <div class="card-info"> 
+	        </div>
+	    </div>
 
-<%= link_to "Edit Your Profile", edit_user_path(current_user) %><br><br>
+	    <div class="card hovercard" id="profile-buttons">
+	   		<div class="row" >
+		       <div class="col-md-4" id="profile-buttons-2">  
+		          <%= button_to "EDIT YOUR PROFILE", edit_user_path(current_user), method: :get, :class => 'btn btn-secondary btn-lg active' %><br><br>
+		       </div>
+		       <div class="col-md-4" > 
+				<%= button_to "SUBSCRIBE TO PLAN", new_subscription_path, method: :get, :class => ' btn btn-secondary btn-lg active', :id => "profile-buttons-3" %>
+		       </div>
+	    	</div>
+		</div>
 
-<h2> Subscribe to Plan </h2>
-<%= button_to "Subscribe", new_subscription_path, method: :get %>
-
-<br><h2>Current Plan</h2>
-<%= render "current" %>
-
-
+	      <div class="well">
+		      <div class="tab-content">
+		        <div class="tab-pane fade in active" id="tab1">
+			       <br><h2>Current Plan</h2>
+					<%= render "current" %>
+				</div>
+		      </div>
+	    	</div>
+    </div>
+    
+</div>
