@@ -1,5 +1,3 @@
-<h2> Subscribe to BitBox </h2>
-
 <% if @subs.errors.any? %>
   <div id="error_explanation">
     <h2>
@@ -19,7 +17,7 @@
 	<%= f.hidden_field :subscriber_id, :value => current_user.id %>
 	<%= f.label :level, "Monthly Plan" %><br><br>
 	<%= f.collection_select(:level, Subscription.first(3), :level_with_descript, :level) %><br>
-  <br> <%= f.submit "Subscribe" %>
+  <br> <%= f.submit "Subscribe", :class => 'btn btn-secondary btn-sm active' %>
 <% end %>
 
 

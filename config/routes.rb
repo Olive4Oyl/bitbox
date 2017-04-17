@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   	resources :subscriptions, only: [:new, :show, :edit, :update, :destroy]
   end
 
-  root 'welcome#index'
+  # root 'welcome#index'
+  root :to => 'welcome#index'
 
   resources :subscriptions
 

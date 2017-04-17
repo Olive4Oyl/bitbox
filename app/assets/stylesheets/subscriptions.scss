@@ -2,3 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+#subs-info {
+    margin-top: 30px;
+    box-shadow: 0 0 30px #5f027e;
+    padding:0 15px 0 15px;
+}
+
+.subs {
+	margin-left: 100px;
+	margin-right: 100px;
+}
+
+
+.table {
+	width: 30% !important;
+}

@@ -1,19 +1,12 @@
-$(function() {
+ $(function() {
   getBoxes();
   getSubscriptions();
   attachBoxes();
   getUsers();
   attachformListener();
+  carouselIndex();
 });
 
-// .done(function(response) {
-//       console.log("hello")
-//       response.forEach(function(box_attr) {
-//         var box = new Box(box_attr)
-//         var html = box.toHTML()
-//         $('.boxes-container').append(html);
-//       })
-//     })
 
 function getBoxes() {
   if ($('.boxes.index').length){
@@ -24,9 +17,10 @@ function getBoxes() {
   		dataType: "json",
   	}).done(function(response) {
       response.forEach(function(box_attr) {
+        debugger
         var box = new Box(box_attr)
         var html = box.toHTML()
-        $('.boxes-container').append(html);
+        $('.th').append(html);
       })
     })
   }
@@ -56,7 +50,7 @@ Box.prototype.toHTML = function(){
    "</strong></br>",
    "$" + this.price + '</br>',
     this.description + '</br>',
-   	"For ages " + this.age_recommendation + "+" + '</br>',
+   	"For ages " + this.age_recommendation + "+" + '</br>' + '</br>',
   ].join("")
 }
 
@@ -70,14 +64,16 @@ Box.prototype.toSubHTML = function(){
     this.title,
    '</strong></br>',
     this.description + '</br>',
-    "<br> What You'll Get </br>",
-    '<br>' + this.box_info + '</br>',
+    "<br><strong> What You'll Get </strong></br>",
+    this.box_info + '</br>',
     '(+ Thousands More Online & On the App!)' +'</br>',
     '<br>' + this.box_guide + '</br>',
     'Step-by-step instructions that guide you from simple circuit building to mind-blowing inventions. </br>',
     '<br> For ages ' + this.age_recommendation + "+" + '</br>',
-    '<br><br>*All plans will automatically renew but may be canceled at anytime. Applicable taxes not included.'
+    '<br>*All plans will automatically renew but may be canceled at anytime. Applicable taxes not included.'
   ].join("")
 }
+
+
 
 

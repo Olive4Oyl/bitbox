@@ -4,6 +4,7 @@ class SubscriptionsController < ApplicationController
 
 	def index
 		@subs = Subscription.all
+
 		respond_to do |format|
 			format.html { render :index }
 			format.json { render json: @subs } 
@@ -17,7 +18,6 @@ class SubscriptionsController < ApplicationController
 
 	def create
 		@subscription =  Subscription.new(subs_params)
-		
 		if @subscription.valid?
 	 		@subscription.save
 	 		current_user.subscribed = true

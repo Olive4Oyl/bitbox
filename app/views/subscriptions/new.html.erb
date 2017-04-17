@@ -1,4 +1,23 @@
-<div class=monthly-plan>
-<%= render 'form' %><br>
-<%= button_to "Back", user_path(current_user), method: :get%>
+<div class="col-lg-6 col-sm-6">
+	<div class="monthly-plan">
+	    <div class="card hovercard">
+	        <div class="card-background">
+	            <img class="card-bkimg" alt="" src="https://pic.funnygifsbox.com/uploads/2014/08/4f21a08e1662846cf733146d19f6b994.gif">
+	        </div>
+	        <div class="useravatar">
+	            <img alt="" src="https://pic.funnygifsbox.com/uploads/2014/08/4f21a08e1662846cf733146d19f6b994.gif">
+	        </div>
+	        <div class="card-info"> 
+	        	<h2> Subscribe to BitBox </h2>
+	        </div>
+	    </div>
+
+	    <div class="card hovercard" id="profile-buttons">
+	   		<div class="row" >
+	   		<%= render 'form' %><br>
+			<%= button_to "Back", user_path(current_user), method: :get, :class => 'btn btn-secondary btn-sm active' %>
+	    	</div>
+		</div>
+	</div>
 </div>
+    
