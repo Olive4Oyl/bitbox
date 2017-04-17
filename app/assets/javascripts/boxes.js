@@ -20,7 +20,7 @@ function getBoxes() {
         debugger
         var box = new Box(box_attr)
         var html = box.toHTML()
-        $('.th').append(html);
+        $('.tr').append(html);
       })
     })
   }
