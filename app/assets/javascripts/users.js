@@ -5,7 +5,7 @@ function getUsers(){
 			method: "GET",
 			dataType: "json",
 		}).done(function(response){
-			var string = "<h2>" + response.name +"'s Subscription </h2>"
+			var string = "<h2>" + response.name+"'s Subscription </h2>"
 			$('.card-info').prepend(string)
 		});
 

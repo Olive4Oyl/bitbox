@@ -5,6 +5,7 @@
 			<%= sub.level %><br>
 			<% @date = sub.updated_at %>
 			<br>Started on: <%= @date.strftime("%m/%d/%Y") %><br><br>
+			<%= link_to "Cancel Subscription", subscription_path(sub), method: :delete %>
 		<% end %>
 	<% end %><br>
 <% else %>
