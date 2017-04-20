@@ -39,13 +39,11 @@ function attachBoxes(){
 	if ($('.subscriptions.index').length) {
 		$('.table').on("click", function(ev){
 			var id = this.id
-			debugger;
 			$.ajax({
 				url: `/subscriptions/${id}`,
 				method: "GET",
 				dataType: "json",
 			}).done(function(response){
-				debugger;
 				var box = new Box(response.box)
 				var html = box.toSubHTML()
 				$('.box-info').empty();
